@@ -1,0 +1,373 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.1",
+  "serial": 9,
+  "lineage": "de8553af-79e7-3ed7-b2ac-e0a961cfb96a",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_internet_gateway",
+      "name": "Hemanthgw",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-north-1:730335232048:internet-gateway/igw-065e528863e885934",
+            "id": "igw-065e528863e885934",
+            "owner_id": "730335232048",
+            "region": "eu-north-1",
+            "tags": {
+              "Name": "Hemanth_GW"
+            },
+            "tags_all": {
+              "Name": "Hemanth_GW"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-028cccedf032a2d43"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_vpc.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "RouteHemanth",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-north-1:730335232048:route-table/rtb-0c839a6cb2ca45687",
+            "id": "rtb-0c839a6cb2ca45687",
+            "owner_id": "730335232048",
+            "propagating_vgws": [],
+            "region": "eu-north-1",
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "igw-065e528863e885934",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "Hemanth_Route"
+            },
+            "tags_all": {
+              "Name": "Hemanth_Route"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-028cccedf032a2d43"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "730335232048",
+            "id": "rtb-0c839a6cb2ca45687",
+            "region": "eu-north-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_internet_gateway.Hemanthgw",
+            "aws_vpc.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "FirstAssociation",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0cfd61b8059b91bd0",
+            "region": "eu-north-1",
+            "route_table_id": "rtb-0c839a6cb2ca45687",
+            "subnet_id": "subnet-06ac1ae7324ab1b01",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_internet_gateway.Hemanthgw",
+            "aws_route_table.RouteHemanth",
+            "aws_subnet.SN1",
+            "aws_vpc.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "SecondAssociation",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-023e2b22497afb932",
+            "region": "eu-north-1",
+            "route_table_id": "rtb-0c839a6cb2ca45687",
+            "subnet_id": "subnet-0d3f25bff311cae54",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_internet_gateway.Hemanthgw",
+            "aws_route_table.RouteHemanth",
+            "aws_subnet.SN2",
+            "aws_vpc.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "Hemanth_SG",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 1,
+          "attributes": {
+            "arn": null,
+            "description": "Security group for AWS TF Script",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [
+                  "::/0"
+                ],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0641ac88dc8054a45",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 22,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "ssh",
+                "security_groups": [],
+                "self": false,
+                "to_port": 22
+              }
+            ],
+            "name": "Test_SG1",
+            "name_prefix": null,
+            "owner_id": null,
+            "region": "eu-north-1",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "Hemanth_SG"
+            },
+            "tags_all": {
+              "Name": "Hemanth_SG"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-028cccedf032a2d43"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": null,
+            "id": null,
+            "region": null
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_vpc.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "SN1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-north-1:730335232048:subnet/subnet-06ac1ae7324ab1b01",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "eu-north-1a",
+            "availability_zone_id": "eun1-az1",
+            "cidr_block": "10.0.0.0/28",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-06ac1ae7324ab1b01",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "730335232048",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "eu-north-1",
+            "tags": {
+              "Name": "subnet 01"
+            },
+            "tags_all": {
+              "Name": "subnet 01"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-028cccedf032a2d43"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "730335232048",
+            "id": "subnet-06ac1ae7324ab1b01",
+            "region": "eu-north-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "SN2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-north-1:730335232048:subnet/subnet-0d3f25bff311cae54",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "eu-north-1b",
+            "availability_zone_id": "eun1-az2",
+            "cidr_block": "10.0.0.16/28",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0d3f25bff311cae54",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "730335232048",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "eu-north-1",
+            "tags": {
+              "Name": "subnet 02"
+            },
+            "tags_all": {
+              "Name": "subnet 02"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-028cccedf032a2d43"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "730335232048",
+            "id": "subnet-0d3f25bff311cae54",
+            "region": "eu-north-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-north-1:730335232048:vpc/vpc-028cccedf032a2d43",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.0.0.0/24",
+            "default_network_acl_id": "acl-06785e5cafed41e10",
+            "default_route_table_id": "rtb-0bac0202512e95b3f",
+            "default_security_group_id": "sg-023afb424948a4a3e",
+            "dhcp_options_id": "dopt-0467b4bed278f4b6b",
+            "enable_dns_hostnames": false,
+            "enable_dns_support": true,
+            "enable_network_address_usage_metrics": false,
+            "id": "vpc-028cccedf032a2d43",
+            "instance_tenancy": "default",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_network_border_group": "",
+            "ipv6_ipam_pool_id": "",
+            "ipv6_netmask_length": 0,
+            "main_route_table_id": "rtb-0bac0202512e95b3f",
+            "owner_id": "730335232048",
+            "region": "eu-north-1",
+            "tags": {
+              "Name": "Hemanth VPC"
+            },
+            "tags_all": {
+              "Name": "Hemanth VPC"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
