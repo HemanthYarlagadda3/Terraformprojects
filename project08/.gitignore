@@ -1,4 +1,4 @@
 #git ignore files and folder
 
-.terraform/
+.terraform
 .terraform.lock.hcl
