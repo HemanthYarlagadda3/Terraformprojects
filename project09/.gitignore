@@ -9,3 +9,7 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 
+# git ignore files and folder
+.terraform
+.terraform.lock.hcl
+
