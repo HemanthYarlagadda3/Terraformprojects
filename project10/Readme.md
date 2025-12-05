@@ -1,0 +1,6 @@
+-- This project is created for checking drift functinality in terraform
+-- Created AWS infra using terraform code 
+-- Later changed infra configuration from AWS UI
+-- Then when i used terraform plan -refresh-only --- it provides me the list the list of changes that differ from my terraform code (that done using UI)
+-- If i want to rollback all the changes that done from ui  use - terraform apply
+--if i want to changes that done from ui , need to available,,then i need to edit that block my terraform file
