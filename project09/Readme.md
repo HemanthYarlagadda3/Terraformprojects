@@ -1,4 +1,4 @@
-project created using namespaces - dev, stage , prod
+This project created using namespaces - dev, stage , prod
 
    for creating name spaces - terraform workspace new namespacename
    for changing name soace - terraform workspace select namespace
